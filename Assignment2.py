@@ -35,13 +35,11 @@ def assignment2():
 
 
 def main():
-    # parser = argparse.ArgumentParser()
-
-    parser = argparse.ArgumentParser()
+     parser = argparse.ArgumentParser()
     parser.add_argument("--url")
     parser.add_argument("--url url", help='The url you wish to use to find the birthday csv file', type=str)
     args = parser.parse_args()
-    assignment2()  # function for initializing logger
+    assignment2() 
     try:
         csvData = downloadData(args.url)
     except:
@@ -56,7 +54,7 @@ def main():
         exit()
 
     while True:
-        idlookup = int(input("Please enter a ID to lookup, or type 0 or a negative number to quit: "))
+        idlookup = int(input("Please enter a ID to lookup or type 0 to quit program: "))
         displayPerson(idlookup, csvData) if idlookup > 0 else exit()
 
 
